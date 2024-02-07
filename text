@@ -1,0 +1,148 @@
+--------1- learn to navigate across directory
+
+https://contabo.com/blog/linux-navigation-and-file-management/#:~:text=To%20effectively%20navigate%20the%20Linux,parts%20of%20the%20file%20system.
+
+cd [directory_path] 
+
+
+---------2-- create,delete,move,copy,rename ..etc files and folder
+
+create-
+mkdir [directory_name] 
+touch [file_name] 
+touch notes.txt 
+
+delete-
+rm unwanted.txt 
+rm -r old_directory 
+
+
+move-
+mv old_file.txt new_file.txt 
+mv /path/to/source /path/to/destination 
+
+copy-
+cp [source] [destination] 
+cp document.txt backup/
+To copy an entire directory and its contents, use the -r (recursive) option with cp: 
+cp -r [source_directory] [destination_directory] 
+cp -r my_folder /path/to/destination/ 
+
+rename-
+mv old_file.txt new_file.txt 
+
+
+-------3-- play around with text files,create txt files ,perform searching
+
+https://www.geeksforgeeks.org/how-to-create-a-text-file-using-the-command-line-in-linux/
+
+-create fie
+touch filename.txt 
+or  > filename.txt 
+touch file1.txt file2.txt file3.txt 
+or > file.txt > file2.txt > file3.txt
+
+-read file
+cat >> file.txt 
+or echo >> file1.txt >> file2.txt >> file3.txt 
+or printf "" >> file1.txt >> file2.txt >> file3.txt
+
+
+-edit file
+nano filename.txt
+or vim filename.txt
+
+-find text file
+file * | grep ":.* text"
+
+-search in file
+
+https://www.geeksforgeeks.org/how-to-find-all-files-containing-specific-text-string-on-linux/
+
+Contents of file1.txt : This line contains text.
+Contents of file2.txt : You should learn Data Structures & Algorithms.
+
+grep -l text file1.txt file2.txt
+out: file1.txt
+
+grep -l Text file1.txt file2.txt
+out: 
+
+grep -li Text file1.txt file2.txt // ignore case
+out: file1.txt
+
+grep -lir Text file1.txt file2.txt //directory
+out: files/ile1.txt
+
+/files/ rg test //search in the dir
+file1.txt
+
+/files/ ack test //search in the dir
+file1.txt
+
+
+-----4------- learn nano or vi editor
+Linux file ownership: three types of owners: user, group, and others .
+https://www.geeksforgeeks.org/nano-vs-vim-editor-whats-the-difference-between-nano-and-vim-editors/
+both are editors, nano easy to use for newcomers, vim complex to use for experienced user.
+
+----5--- linux permissions(how to read and change it)
+https://www.pluralsight.com/blog/it-ops/linux-file-permissions
+
+chmod +rwx filename to add permissions
+chmod -rwx directoryname to remove permissions. 
+chmod +x filename to allow executable permissions.
+chmod -wx filename to take out write and executable permissions.
+-/d/I : - for file, d for directory, I for link
+rwx : read,write and execute permissions for OWNER
+r-- : read,write and execute permissions for MEMBER OF GROUPS
+r-- : read,write and execute permissions for OTHER USERS
+
+chmod ugo+rwx foldername to give read, write, and execute to everyone.
+chmod a=r foldername to give only read permission for everyone.
+
+----6-- ssh and scp commands
+https://www.pluralsight.com/resources/blog/cloud/ssh-and-scp-howto-tips-tricks
+https://www.geeksforgeeks.org/scp-command-in-linux-with-examples/
+https://www.geeksforgeeks.org/ssh-command-in-linux-with-examples/?ref=lbp
+
+The scp command allows you to copy files over ssh connections. 
+
+-----7--- connect to remote machine create a text file over there and copy it your local
+https://unix.stackexchange.com/questions/188285/how-to-copy-a-file-from-a-remote-server-to-a-local-machine
+https://www.cyberciti.biz/faq/how-to-copy-and-transfer-files-remotely-on-linux-using-scp-and-rsync/
+
+-----8---  list process ,list process running on port,kill process
+https://www.hostinger.in/tutorials/vps/how-to-manage-processes-in-linux-using-command-line#:~:text=To%20list%20processes%20in%20Linux%2C
+%20use%20one%20of%20the%20four,htop%20sort%20by%20CPU%20usage.
+https://www.geeksforgeeks.org/kill-command-in-linux-with-examples/
+
+list process : ps
+process running on specific port:lsof -i :100
+kill : kill PID
+
+-----9---  start,stop,restart any service
+https://www.zdnet.com/article/how-to-start-stop-and-restart-a-service-on-any-systemd-powered-linux-distribution/
+https://www.geeksforgeeks.org/start-stop-restart-services-using-systemctl-in-linux/
+
+
+-----10---  zip unzip files
+https://www.servermania.com/kb/articles/linux-unzip
+
+
+-----11---  difference between .tgz,.tar.gz,.tbz2
+tar file zip = tar.gz
+bunch of tar file zip = tar.gz 
+specific algo zip tar file= .tbz2
+
+
+-----12---  Learn Which commands are not to be fired into the system(Most important).
+https://phoenixnap.com/kb/dangerous-linux-terminal-commands
+https://www.tecmint.com/dangerous-linux-commands/#:~:text=rm%20%2Drf%20%2F%20Command&text=In%20a%20nutshell%2C%20the%20rm,recursively%2C%20even%20the%20empty%20folder.
+
+
+---mostly covered command-----
+https://kinsta.com/blog/linux-commands/
+
+
+
